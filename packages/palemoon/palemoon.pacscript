@@ -54,10 +54,63 @@ mode_palemoon_install_main () {
 	return 0
 }
 
+mode_palemoon_install_bin () {
+
+
+	local prj_dir_path="${pkgdir}/usr/share/palemoon"
+
+	local bin_dir_path="${pkgdir}/usr/bin"
+	local bin_file_path="${bin_dir_path}/palemoon"
+
+
+	echo
+	echo mkdir -p "${bin_dir_path}"
+	mkdir -p "${bin_dir_path}"
+
+
+	echo
+	echo ln -sf "/usr/share/palemoon/palemoon" "${bin_file_path}"
+	ln -sf "/usr/share/palemoon/palemoon" "${bin_file_path}"
+
+
+	return 0
+}
+
+mode_palemoon_install_desktop_entry () {
+
+
+	local prj_dir_path="${pkgdir}/usr/share/palemoon"
+
+	local applications_dir_path="${pkgdir}/usr/share/applications"
+	local applications_file_path="${applications_dir_path}/palemoon.desktop"
+
+
+	echo
+	echo mkdir -p "${applications_dir_path}"
+	mkdir -p "${applications_dir_path}"
+
+
+cat << __EOF__ | tee "${applications_file_path}"
+[Desktop Entry]
+Version=1.0
+Name=Pale Moon Web Browser
+Comment=Browse the World Wide Web
+Keywords=Internet;WWW;Browser;Web;Explorer
+Exec=palemoon %u
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=palemoon
+Categories=Network;WebBrowser;Internet
+MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;x-scheme-handler/chrome;video/webm;application/x-xpinstall;
+StartupNotify=true
+__EOF__
 
 
 
 
+	return 0
+}
 
 
 
@@ -92,6 +145,10 @@ package () {
 
 
 	mode_palemoon_install_main
+
+	mode_palemoon_install_bin
+
+	mode_palemoon_install_desktop_entry
 
 
 
