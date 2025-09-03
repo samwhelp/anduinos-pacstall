@@ -13,6 +13,15 @@ replace=()
 
 
 
+##
+## ## Link
+##
+## * https://github.com/samwhelp/demo-for-anduinos-discussion/tree/main/demo/installer/basilisk/demo-start
+##
+
+
+
+
 util_copy_from_srcdir_to_desdir () {
 
 	local src_dir_path="${1}"
