@@ -1,7 +1,7 @@
 pkgname="palemoon"
 gives="${pkgname}"
-arch=("all")
-pkgver="0.1.1"
+arch=("amd64")
+pkgver="33.8.2"
 pkgdesc="Web Browser / palemoon"
 maintainer="develop <develop@home.heaven>"
 source=("https://rm-us.palemoon.org/release/palemoon-33.8.2.linux-x86_64-gtk3.tar.xz")
