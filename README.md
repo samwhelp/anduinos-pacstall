@@ -24,6 +24,8 @@
 
 ### web-browser
 
+> [#208 - Palemoon and Basilisk browsers on AnduinOS](https://github.com/Anduin2017/AnduinOS/discussions/208)
+
 | Pacscript | Source |
 | --------- | ------ |
 | [palemoon](https://github.com/samwhelp/anduinos-pacstall/blob/main/packages/palemoon/palemoon.pacscript) | [Source](https://www.palemoon.org/download.shtml) |
